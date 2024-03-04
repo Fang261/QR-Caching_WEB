@@ -55,23 +55,28 @@
 
 ### Guião de Teste 3
 
-**Visualização de Eventos e QR Codes:**
+**Visualização de Eventos:**
 
-1. **Acesso à Página Inicial:** Na página inicial, localize a aba de eventos e clique nela para ver todos os eventos disponíveis.
+1. **Página Inicial:** Na página inicial, localize a aba de eventos onde nela puderá ver todos os eventos disponíveis.
 
-2. **Visualização da Lista de Eventos:** Verifique se a lista de eventos é exibida corretamente, incluindo informações relevantes sobre cada evento, como nome, data e localização.
+2. **Seleção de um Evento:** Escolha um evento da lista clicando nele para visualizar os detalhes específicos desse evento.
 
-3. **Seleção de um Evento:** Escolha um evento da lista clicando nele para visualizar os detalhes específicos desse evento.
+3. **Redirecionamento para a Página do Evento:** Após selecionar um evento, será redirecionado para a página específica desse evento.
 
-4. **Redirecionamento para a Página do Evento:** Após selecionar um evento, verifique se é redirecionado para a página específica desse evento.
+4. **Visualização dos QR Codes do Evento:** Na página do evento, irá conseguir visualizar os QrCodes presentes nesse Evento.
 
-5. **Visualização dos QR Codes do Evento:** Na página do evento, verifique se os QR Codes associados a esse evento são exibidos corretamente, incluindo suas informações e qualquer contexto adicional.
+5. **Visualização do Mapa do Evento:** Na página do evento, irá conseguir visualizar também o mapa desse Evento, mostrando a localização dos QR Codes presentes nele.
 
-6. **Visualização do Mapa do Evento:** Certifique-se de que um mapa do evento esteja presente na página do evento, mostrando a localização dos QR Codes presentes no evento.
+----------------------------------------------------------
 
-7. **Verificação da Integração dos QR Codes com o Mapa:** Confira se os QR Codes exibidos na página do evento estão corretamente marcados no mapa, permitindo uma associação visual entre os QR Codes e sua localização física no evento.
+## Plano de Produção
 
-8. **Teste de Funcionalidades Adicionais:** Se houver funcionalidades adicionais relacionadas à visualização de eventos ou QR Codes, teste-as para garantir seu funcionamento adequado.
-
-
-
+1. **Mockup do Site:** Começaremos criando um mockup do site para visualizar a estrutura e o design geral.
+   
+2. **Desenvolvimento HTML e CSS:** Em seguida, começaremos a criar o HTML do site junto com o CSS para estilização.
+   
+3. **Desenvolvimento JavaScript:** Após isso, iniciaremos o desenvolvimento do JavaScript para adicionar funcionalidades dinâmicas ao site.
+   
+4. **Integração com Servidor e Base de Dados:** Em seguida, faremos com que o site se comunique com o servidor e a base de dados para obter e enviar informações.
+   
+5. **Integração com Aplicativo Móvel:** Por fim, garantiremos que o site possa se comunicar de forma eficaz com o aplicativo móvel, compartilhando dados conforme necessário.
