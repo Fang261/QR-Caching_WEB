@@ -7,7 +7,7 @@
   - [Guião de Teste 2](#guião-de-teste-2)
   - [Guião de Teste 3](#guião-de-teste-3)
 - [Plano de Produção](#plano-de-produção)
-  - [Relatórios Individuais](#relatórios-individuais)
+- [Relatórios Individuais](#relatórios-individuais)
   - [Tomás Salgueiro (Número 20220580)](#tomás-salgueiro-número-20220580)
   - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
 
