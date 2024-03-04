@@ -7,22 +7,11 @@
   - [Guião de Teste 2](#Guião-de-Teste-2)
   - [Guião de Teste 3](#Guião-de-Teste-3)
 
-- [Versão Preliminar com Guiões de Teste](#versão-preliminar-com-guiões-de-teste)
-  - [Guião de Teste 1](#Guião-de-Teste-1)
-  - [Guião de Teste 2](#Guião-de-Teste-2)
-  - [Guião de Teste 3](#Guião-de-Teste-3)
-- [Plano de trabalho](#plano-de-trabalho)
-- [Requisitos funcionais e não funcionais](#requisitos-funcionais-e-não-funcionais)
-  - [Requisitos funcionais](#requisitos-funcionais)
-  - [Requisitos não funcionais](#requisitos-não-funcionais)
-- [Modelo do domínio](#modelo-do-domínio)
-
-
 ## Guiões de Teste
 
 ### Guião de Teste 1
 
-####Sign Up
+###Sign Up
 
   Acesso à Página de Registo: Para criar uma conta, aceda à página de registo através do nosso website ou aplicação móvel.
 
@@ -32,7 +21,7 @@
 
   Conclusão do Registo: Após a verificação do email, a sua conta estará criada e poderá aceder aos serviços disponíveis.
 
-####Login
+###Login
 
   Acesso à Página de Login: Para aceder à sua conta existente, visite a página de login no nosso website ou aplicação móvel.
 
