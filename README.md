@@ -7,7 +7,7 @@
   - [Guião de Teste 2](#guião-de-teste-2)
   - [Guião de Teste 3](#guião-de-teste-3)
 - [Plano de Produção](#plano-de-produção)
-- - [Relatórios Individuais](#relatórios-individuais)
+  - [Relatórios Individuais](#relatórios-individuais)
   - [Tomás Salgueiro (Número 20220580)](#tomás-salgueiro-número-20220580)
   - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
 
@@ -96,8 +96,8 @@
 - Elaboração de relatórios.
 
 **Progresso:**
-- **HTML e CSS:** Atualmente trabalhando na criação da estrutura HTML do site e estilos CSS para estilização.
-- **JavaScript:** Em processo de desenvolvimento para adicionar funcionalidades dinâmicas ao site.
+- **HTML e CSS:** Atualmente a trabalhar na criação da estrutura HTML do site e estilos CSS para estilização.
+- **JavaScript:** Ainda não há progresso.
 - **Relatórios:** Relatório em andamento, será concluído conforme o desenvolvimento avança.
 
 ----------------------------------------------------------
@@ -109,7 +109,7 @@
 - Ajustes e integração da aplicação móvel existente.
 
 **Progresso:**
-- **Servidor e Base de Dados:** Trabalhando no aprimoramento do servidor para melhorar o desempenho e segurança, e na integração com a base de dados para garantir a comunicação eficaz com o site.
+- **Servidor e Base de Dados:** A trabalhar no aprimoramento do servidor para melhorar o desempenho e segurança, e na integração com a base de dados para garantir a comunicação eficaz com o site.
 - **Aplicativo Móvel:** Realizando ajustes na aplicação móvel existente para que ela possa interagir de forma eficaz com o site em desenvolvimento.
 
 ----------------------------------------------------------
