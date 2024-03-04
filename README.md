@@ -6,6 +6,10 @@
   - [Guião de Teste 1](#guião-de-teste-1)
   - [Guião de Teste 2](#guião-de-teste-2)
   - [Guião de Teste 3](#guião-de-teste-3)
+- [Plano de Produção](#plano-de-produção)
+- - [Relatórios Individuais](#relatórios-individuais)
+  - [Tomás Salgueiro (Número 20220580)](#tomás-salgueiro-número-20220580)
+  - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
 
 ## Guiões de Teste
 
@@ -71,12 +75,41 @@
 
 ## Plano de Produção
 
-1. **Mockup do Site:** Começaremos criando um mockup do site para visualizar a estrutura e o design geral.
-   
-2. **Desenvolvimento HTML e CSS:** Em seguida, começaremos a criar o HTML do site junto com o CSS para estilização.
-   
-3. **Desenvolvimento JavaScript:** Após isso, iniciaremos o desenvolvimento do JavaScript para adicionar funcionalidades dinâmicas ao site.
-   
-4. **Integração com Servidor e Base de Dados:** Em seguida, faremos com que o site se comunique com o servidor e a base de dados para obter e enviar informações.
-   
-5. **Integração com Aplicativo Móvel:** Por fim, garantiremos que o site possa se comunicar de forma eficaz com o aplicativo móvel, compartilhando dados conforme necessário.
+1. **Mockup do Site:** Começaremos por criar um esboço do site para visualizar a estrutura e o design geral.
+
+2. **Desenvolvimento do HTML e CSS:** Em seguida, começaremos a criar o HTML do site juntamente com o CSS para estilização.
+
+3. **Desenvolvimento do JavaScript:** Após isso, iniciaremos o desenvolvimento do JavaScript para adicionar funcionalidades dinâmicas ao site.
+
+4. **Integração com Servidor e Base de Dados:** Em seguida, faremos com que o site comunique com o servidor e a base de dados para obter e enviar informações.
+
+5. **Integração com Aplicativo Móvel:** Por fim, garantiremos que o site possa comunicar de forma eficaz com o aplicativo móvel, partilhando dados conforme necessário.
+
+----------------------------------------------------------
+
+## Relatórios Individuais
+
+### Tomás Salgueiro (Número 20220580)
+
+**Responsabilidades:**
+- Desenvolvimento HTML, CSS e JavaScript.
+- Elaboração de relatórios.
+
+**Progresso:**
+- **HTML e CSS:** Atualmente trabalhando na criação da estrutura HTML do site e estilos CSS para estilização.
+- **JavaScript:** Em processo de desenvolvimento para adicionar funcionalidades dinâmicas ao site.
+- **Relatórios:** Relatório em andamento, será concluído conforme o desenvolvimento avança.
+
+----------------------------------------------------------
+
+### João Moniz (Número 20220550)
+
+**Responsabilidades:**
+- Melhoramento do servidor e base de dados.
+- Ajustes e integração da aplicação móvel existente.
+
+**Progresso:**
+- **Servidor e Base de Dados:** Trabalhando no aprimoramento do servidor para melhorar o desempenho e segurança, e na integração com a base de dados para garantir a comunicação eficaz com o site.
+- **Aplicativo Móvel:** Realizando ajustes na aplicação móvel existente para que ela possa interagir de forma eficaz com o site em desenvolvimento.
+
+----------------------------------------------------------
