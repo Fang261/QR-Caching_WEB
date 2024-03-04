@@ -130,6 +130,8 @@ Os desafios específicos incluem:
   
 - Visualização de Detalhes dos Eventos: Os utilizadores enfrentam dificuldades para visualizar detalhes específicos dos eventos, como informações sobre palestrantes, horários e localização.
 
+----------------------------------------------------------
+
 ### Solução Provisória
 
 Para resolver temporariamente estes problemas, propomos o desenvolvimento de um website chamado QR-Caching_WebSite, que oferecerá as seguintes funcionalidades:
