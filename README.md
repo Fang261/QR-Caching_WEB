@@ -120,7 +120,7 @@
 
 ### Problema
 
-Após uma análise preliminar, identificámos que o principal problema enfrentado pelos utilizadores é a dificuldade em organizar e aceder a informações através de QR Codes em eventos ou locais específicos. Os utilizadores muitas vezes deparam-se com a falta de uma maneira eficiente de criar rotas personalizadas que incorporem múltiplos QR Codes, bem como a necessidade de visualizar detalhes relevantes dos eventos.
+Após uma análise preliminar, identificámos que o principal problema enfrentado pelos utilizadores pode ser a dificuldade em organizar e aceder a informações através de QR Codes em eventos ou locais específicos. Os utilizadores podem deparar-se com a falta de uma maneira eficiente de criar rotas personalizadas que incorporem múltiplos QR Codes, bem como a necessidade de visualizar detalhes relevantes dos eventos.
 
 Os desafios específicos incluem:
 
