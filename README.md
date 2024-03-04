@@ -10,6 +10,8 @@
 - [Relatórios Individuais](#relatórios-individuais)
   - [Tomás Salgueiro (Número 20220580)](#tomás-salgueiro-número-20220580)
   - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
+- [Investigação e Definição do Problema](#investigação-e-definição-do-problema)
+
 
 ## Guiões de Teste
 
@@ -113,3 +115,31 @@
 - **Aplicativo Móvel:** Realizando ajustes na aplicação móvel existente para que ela possa interagir de forma eficaz com o site em desenvolvimento.
 
 ----------------------------------------------------------
+
+## Investigação e Definição do Problema
+
+### Problema
+
+Após uma análise preliminar, identificámos que o principal problema enfrentado pelos utilizadores é a dificuldade em organizar e aceder a informações através de QR Codes em eventos ou locais específicos. Os utilizadores muitas vezes deparam-se com a falta de uma maneira eficiente de criar rotas personalizadas que incorporem múltiplos QR Codes, bem como a necessidade de visualizar detalhes relevantes dos eventos.
+
+Os desafios específicos incluem:
+
+- Organização de QR Codes: Os utilizadores têm dificuldade em organizar e aceder a QR Codes de eventos específicos de maneira eficiente, especialmente quando se trata de uma grande quantidade de códigos.
+  
+- Criação de Rotas Personalizadas: Não existe uma solução fácil para criar rotas personalizadas que incluam múltiplos QR Codes, levando a uma experiência fragmentada e desorganizada.
+  
+- Visualização de Detalhes dos Eventos: Os utilizadores enfrentam dificuldades para visualizar detalhes específicos dos eventos, como informações sobre palestrantes, horários e localização.
+
+### Solução Provisória
+
+Para resolver temporariamente estes problemas, propomos o desenvolvimento de um website chamado QR-Caching_WebSite, que oferecerá as seguintes funcionalidades:
+
+- Registo e Login de Utilizadores: Permitirá que os utilizadores se registem e façam login nas suas contas para aceder aos recursos oferecidos pelo site.
+  
+- Criação de Rotas de QR Codes: Os utilizadores poderão criar rotas personalizadas, adicionando e organizando QR Codes de eventos da sua escolha. Isso proporcionará uma maneira mais eficiente de aceder aos QR Codes relevantes numa sequência planeada.
+  
+- Visualização de Detalhes dos Eventos: Os utilizadores poderão visualizar informações detalhadas sobre os eventos, incluindo detalhes sobre palestrantes, horários e mapas de localização.
+  
+- Integração com Servidor e Base de Dados: O website comunicará com um servidor e uma base de dados para armazenar e recuperar informações dos utilizadores, garantindo a sincronização de dados entre o website e a aplicação móvel associada.
+
+Embora esta solução provisória possa atender às necessidades imediatas dos utilizadores, reconhecemos que é importante realizar testes contínuos e recolher feedback para aprimorar e expandir as funcionalidades do website no futuro.
