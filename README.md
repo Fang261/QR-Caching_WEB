@@ -8,7 +8,7 @@
   - [Guião de Teste 3](#guião-de-teste-3)
 - [Plano de Produção](#plano-de-produção)
 - [Relatórios Individuais](#relatórios-individuais)
-  - [Tomás Salgueiro (Número 20220580)](#tomás-salgueiro-número-20220580)
+  - [Tomás Salgueiro (Número 20220589)](#tomás-salgueiro-número-20220589)
   - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
 - [Investigação e Definição do Problema](#investigação-e-definição-do-problema)
 
@@ -91,7 +91,7 @@
 
 ## Relatórios Individuais
 
-### Tomás Salgueiro (Número 20220580)
+### Tomás Salgueiro (Número 20220589)
 
 **Responsabilidades:**
 - Desenvolvimento HTML, CSS e JavaScript.
