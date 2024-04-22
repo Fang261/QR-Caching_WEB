@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="icon" href="Logo_mini.png">
     <title>Index</title>
 </head>
 <body>
     <header >
-        <nav>
-            <img src="Logo_Ext.png" alt="Logo" width="300px" height="125px">
-            <button>Login</button>
-            <button>Sign Up</button>
-        </nav>
+        <nav class="header_nav">
+            <img src="Logo_Ext.png" alt="Logo" class="logo">
+            <div class="buttons">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </nav>  
+        <div class="map-background">
+            <!-- You can replace the src attribute with the path to your map background image -->
+            <img src="Lisbon_map.png" alt="Map Background">
+        </div>
+        <div class="content">
+            <button class="create-route-btn">Create Route</button>
+        </div>              
     </header>
 
     <main>
