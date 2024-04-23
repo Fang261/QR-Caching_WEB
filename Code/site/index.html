@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,41 @@
     <link rel="icon" href="Logo_mini.png">
     <title>Index</title>
 </head>
-<body>
-    <header >
-        <nav class="header_nav">
-            <img src="Logo_Ext.png" alt="Logo" class="logo">
-            <div class="buttons">
-                <button class="login-btn">Login</button>
-                <button class="signup-btn">Sign Up</button>
-            </div>
-        </nav>  
-        <div class="map-background">
-            <!-- You can replace the src attribute with the path to your map background image -->
-            <img src="Lisbon_map.png" alt="Map Background">
-        </div>
-        <div class="content">
-            <button class="create-route-btn">Create Route</button>
-        </div>              
-    </header>
 
+<body>
+    <header>
+        <nav>
+            <img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo">
+            <div class="nav_buttons">
+                <a href="login.html"><button class="login-btn">Login</button></a>
+                <a href="signup.html"><button class="signup-btn">Sign Up</button></a>
+            </div>
+        </nav>
+    </header>
     <main>
-        
+        <div class="map-background">
+            <img src="img/Lisbon_map.png" alt="Map Background">
+            <button id="create-route-btn">Create Route</button>
+        </div>
+        <div class="app_section">
+            <div class="app_section_text">
+                <h2>There are XXX QrCodes in Lisbon</h2>
+                <p>Download our app to get the best experience of your life</p>
+            </div>
+            <div class="app_section_download">
+                <img src="img/apple.png" alt="apple">
+                <img src="img/google.png" alt="google play">
+            </div>
+            <div class="app_section_phone">
+                <img src="img/phone.png" alt="phone" id="phone">
+            </div>
+        </div>
     </main>
 
+
     <footer>
-        
+
     </footer>
 </body>
+
 </html>
