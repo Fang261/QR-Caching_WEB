@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,42 +8,52 @@
     <link rel="icon" href="Logo_mini.png">
     <title>Index</title>
 </head>
+
 <body>
-    <header >
+    <header>
         <nav>
-            <img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo">
-        </nav>  
+            <a href="index.html"><img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo"></a>
+        </nav>
     </header>
     <main>
-                <div class="map-background">
+        <div class="map-background">
             <img src="img/Lisbon_map_full.png" alt="Map Background">
-            <div class="showcase_content">
-                <div class="form"> 
-                    <h1>Sign In</h1>
-                    <div class="info">
-                        <input id="email1" class="email" type="email" placeholder="Email" required><br>
-                        <input id="password1" class="email" type="password" placeholder="Password" required minlength="8" maxlength="15">
+            <div class="showcase">
+                <div class="showcase_content">
+                    <div class="form">
+                        <h1>Sign Up</h1>
+                        <div class="info">
+                            <input id="username" class="email" type="text" placeholder="Username" required>
+                            <input id="email1" class="email" type="email" placeholder="Email" required>
+                            <input id="password1" class="email" type="password" placeholder="Password" required
+                                minlength="8" maxlength="15">
+                        </div>
+                        <div class="remember">
+                            <input value="true" type="checkbox"><label>Remember me</label>
+                        </div>
+                        <br>
+                        <div class="actions">
+                            <button class="signin-btn" type="submit" onclick="getIn()">Submit</button>
+                        </div>
                     </div>
-                    <div class="actions">
-                        <button class="signin-btn" type="submit" onclick="getIn()">Sign In</button>
+                    <div class="google_login">
+                        <a href="#">
+                            <img src="img/google_icon.png" alt="Google" id="google_icon">
+                        </a>
+                        <p>Sign Up with Google</p>
                     </div>
-                    <div class="help">
-                        <input value="true" type="checkbox"><label>Remember me</label>
-                        <a href="#" class="help-link">Need Help?</a>                     
-                    </div>   
-                </div>                
-                <div class="google_login">
-                    <a href="#">
-                        <img src="img/google_logo.png" alt="Google">
-                    </a>
-                    <p>Login with Google</p>
+                </div>
+                <div class="ask_login">
+                    <p>Already have an account?</p>
+                    <a href="login.html" class="login_link">Login now</a>
                 </div>
             </div>
-        </div> 
+        </div>
     </main>
 
     <footer>
-        
+
     </footer>
 </body>
+
 </html>

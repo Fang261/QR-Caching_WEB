@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo">
+            <a href="index.html"><img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo"></a>
         </nav>
     </header>
     <main>
@@ -21,23 +21,24 @@
             <div class="showcase">
                 <div class="showcase_content">
                     <div class="form">
-                        <h1>Sign In</h1>
+                        <h1>Login</h1>
                         <div class="info">
-                            <input id="email1" class="email" type="email" placeholder="Email" required><br>
+                            <input id="email1" class="email" type="email" placeholder="Email" required>
                             <input id="password1" class="email" type="password" placeholder="Password" required
                                 minlength="8" maxlength="15">
                         </div>
-                        <div class="actions">
-                            <button class="signin-btn" type="submit" onclick="getIn()">Sign In</button>
-                        </div>
-                        <div class="help">
+                        <div class="remember">
                             <input value="true" type="checkbox"><label>Remember me</label>
-                            <a href="#" class="help-link">Need Help?</a>
+
+                        </div>
+                        <br>
+                        <div class="actions">
+                            <button class="signin-btn" type="submit" onclick="getIn()">Login</button>
                         </div>
                     </div>
                     <div class="google_login">
                         <a href="#">
-                            <img src="img/google_logo.png" alt="Google">
+                            <img src="img/google_icon.png" alt="Google" id="google_icon">
                         </a>
                         <p>Login with Google</p>
                     </div>
