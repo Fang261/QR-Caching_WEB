@@ -1,0 +1,15 @@
+{
+  "name": "QR-Caching",
+  "version": "1.0.0",
+  "description": "A QR-Caching website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "PrimedFortuna",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  }
+}
