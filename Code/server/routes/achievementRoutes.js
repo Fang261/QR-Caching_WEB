@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const achievements = await Achievements.find();
-        res.json(achievements);
+        res.json(achievement);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
