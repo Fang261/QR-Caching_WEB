@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Achievements = require('../models/achievements');
+const Achievements = require('../models/achievement');
+
 
 // Create a new achievement
 router.post('/', async (req, res) => {
