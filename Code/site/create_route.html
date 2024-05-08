@@ -7,36 +7,6 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="icon" href="Logo_mini.png">
     <title>Index</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg_qWGdXGRMzKaipeYdXzLwVIBf6pItXA&callback=initMap" async defer></script>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-    <script>
-
-        function initMap() {
-            var location = { lat: 38.736, lng: -9.142 };
-            var map = new google.maps.Map(
-                document.getElementById('map'), { zoom: 8, center: location });
-
-            var customIcon = {
-                url: 'img/fast-cat-cat-excited.gif', // Corrected path using forward slashes
-                scaledSize: new google.maps.Size(50, 50),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(25, 50)
-            };
-
-            var customMarkerPosition = { lat: 38.70725, lng: -9.15244 };
-
-            var customMarker = new google.maps.Marker({
-                position: customMarkerPosition,
-                map: map,
-                icon: customIcon
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -47,7 +17,42 @@
     </header>
     <main>
 
-        <div class="map" id="map"></div>
+        <div class="map" id="map">
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg_qWGdXGRMzKaipeYdXzLwVIBf6pItXA&callback=initMap" async defer></script>
+            <style>
+                #map {
+                    height: 400px;
+                    width: 100%;
+                }
+            </style>
+            <script>
+        
+                function initMap() {
+                    var location = { lat: 38.736, lng: -9.142 };
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), {  
+                            zoom: 8,
+                            zoomControl: false,
+                            mapTypeControl: false,
+                            center: location});
+        
+                    var customIcon = {
+                        url: 'img/fast-cat-cat-excited.gif',
+                        scaledSize: new google.maps.Size(50, 50),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(25, 50)
+                    };
+        
+                    var customMarkerPosition = { lat: 38.70725, lng: -9.15244 };
+        
+                    var customMarker = new google.maps.Marker({
+                        position: customMarkerPosition,
+                        map: map,
+                        icon: customIcon
+                    });
+                }
+            </script>
+        </div>
 
         <div class="searchbox">
 
