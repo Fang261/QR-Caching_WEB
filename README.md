@@ -10,6 +10,7 @@
 - [Relatórios Individuais](#relatórios-individuais)
   - [Tomás Salgueiro (Número 20220589)](#tomás-salgueiro-número-20220589)
   - [João Moniz (Número 20220550)](#joão-moniz-número-20220550)
+![](https://github.com/Fang261/QR-Caching_WEB/blob/master/gato.gif)
 - [Investigação e Definição do Problema](#investigação-e-definição-do-problema)
 
 
