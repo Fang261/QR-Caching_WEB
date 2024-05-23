@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const User = require('./models/user');
 const Event = require('./models/event');
@@ -23,6 +24,9 @@ const app = express();
 
 // Middleware for parsing JSON bodies
 app.use(express.json());
+
+// Servir arquivos estáticos da pasta "site"
+app.use(express.static(path.join(__dirname, 'site')));
 
 mongoose.connect('mongodb://localhost:27017/myDatabase', {})
     .then(() => {
