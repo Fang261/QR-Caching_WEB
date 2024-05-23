@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="icon" href="Logo_mini.png">
-    <title>Index</title>
+    <title>Gráficos</title>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <img src="img/Logo_EXT_BlackAndPurple_rmbk.png" alt="Logo" class="logo">
-            <div class="nav_buttons">
-                <a href="login.html"><button class="login-btn">Login</button></a>
-                <a href="signup.html"><button class="signup-btn">Sign Up</button></a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="map-background">
-            <img src="img/Lisbon_map.png" alt="Map Background">
+<body class="body_estatisticas">
+    <div class="chart-row">
+        <div class="chart-container">
+            <canvas id="doughnutChart"></canvas>
         </div>
-    </main>
-
-
-    <footer>
-
-    </footer>
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="histogramChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="estatisticas.js"></script>
 </body>
 
 </html>
