@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const User = require('./models/user');
 const Event = require('./models/event');
@@ -22,17 +24,17 @@ const achlqeRoutes = require('./routes/achlqeRoutes');
 
 const app = express();
 
-// Middleware for parsing JSON bodies
-app.use(express.json());
 
-// Servir arquivos estáticos da pasta "site"
-app.use(express.static(path.join(__dirname, 'site')));
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname, '../site')));
 
 mongoose.connect('mongodb://localhost:27017/myDatabase', {})
     .then(() => {
         console.log('Connected to MongoDB');
 
-        // Mount your routes
+        
         app.use('/users', userRoutes);
         app.use('/events', eventRoutes);
         app.use('/lqrcodes', lqrcodeRoutes);
@@ -42,7 +44,7 @@ mongoose.connect('mongodb://localhost:27017/myDatabase', {})
         app.use('/lqes', lqeRoutes);
         app.use('/achlqes', achlqeRoutes);
 
-        // Start the server
+        
         const PORT = process.env.PORT || 3000;
         app.listen(PORT, () => {
             console.log(`Server is running on http://localhost:${PORT}`);

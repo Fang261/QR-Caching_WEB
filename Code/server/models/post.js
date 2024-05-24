@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
+    post_id: {type: Number, default: 0},
     post_foto: String,
     post_text: String,
     post_date: { type: Date, default: null}

@@ -9,6 +9,7 @@
   "author": "PrimedFortuna",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.4"
   }
