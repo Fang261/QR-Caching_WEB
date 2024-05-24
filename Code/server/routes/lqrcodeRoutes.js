@@ -31,7 +31,16 @@ router.get('/:id', getLqrcode, (req, res) => {
 // Update a lqrcode
 router.patch('/:id', getLqrcode, async (req, res) => {
     try {
-        // Update lqrcode fields as needed
+        const { lqrcode_id, lqrcode_latitude, lqrcode_longitude, lqrcode_altitude, lqrcode_is_event, lqrcode_is_quest, lqrcode_times_scanned } = req.body;
+        
+        if (lqrcode_id !== undefined) res.lqrcode.lqrcode_id = lqrcode_id;
+        if (lqrcode_latitude !== undefined) res.lqrcode.lqrcode_latitude = lqrcode_latitude;
+        if (lqrcode_longitude !== undefined) res.lqrcode.lqrcode_longitude = lqrcode_longitude;
+        if (lqrcode_altitude !== undefined) res.lqrcode.lqrcode_altitude = lqrcode_altitude;
+        if (lqrcode_is_event !== undefined) res.lqrcode.lqrcode_is_event = lqrcode_is_event;
+        if (lqrcode_is_quest !== undefined) res.lqrcode.lqrcode_is_quest = lqrcode_is_quest;
+        if (lqrcode_times_scanned !== undefined) res.lqrcode.lqrcode_times_scanned = lqrcode_times_scanned;
+
         const updatedLqrcode = await res.lqrcode.save();
         res.json(updatedLqrcode);
     } catch (error) {
@@ -42,7 +51,7 @@ router.patch('/:id', getLqrcode, async (req, res) => {
 // Delete a lqrcode
 router.delete('/:id', getLqrcode, async (req, res) => {
     try {
-        await res.lqrcode.remove();
+        await res.lqrcode.deleteOne();
         res.json({ message: 'Lqrcode deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });

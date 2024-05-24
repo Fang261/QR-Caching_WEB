@@ -5,10 +5,12 @@ const Post = require('../models/post');
 // Create a new post
 router.post('/', async (req, res) => {
     try {
+        console.log('Request received:', req.body); 
         const newPost = new Post(req.body);
         const savedPost = await newPost.save();
         res.status(201).json(savedPost);
     } catch (error) {
+        console.error('Error saving post:', error);
         res.status(400).json({ message: error.message });
     }
 });
@@ -31,7 +33,6 @@ router.get('/:id', getPost, (req, res) => {
 // Update a post
 router.patch('/:id', getPost, async (req, res) => {
     try {
-        // Update post fields as needed
         const updatedPost = await res.post.save();
         res.json(updatedPost);
     } catch (error) {

@@ -64,6 +64,21 @@ router.delete('/:id', getUser, async (req, res) => {
     }
 });
 
+router.post('/signup', async (req, res) => {
+    try {
+        const { user_name, user_email, user_password } = req.body;
+        const newUser = new User({
+            user_name,
+            user_email,
+            user_password
+        });
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 async function getUser(req, res, next) {
     let user;
     try {

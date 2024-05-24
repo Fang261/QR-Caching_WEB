@@ -79,12 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
         { month: 'Novembro', count: 0 },
         { month: 'Dezembro', count: 0 }
     ];
-
-    fetch('http://localhost:3000/post')
+    
+    fetch('http://localhost:3000/posts')
         .then(response => response.json())
         .then(posts => {
+            console.log('Posts:', posts); // Log posts
             posts.forEach(post => {
-                var date = new Date(post.pos_tdate); // Assuming post has a 'date' field
+                var date = new Date(post.post_date); // Fix typo from post.pos_tdate to post.post_date
                 var month = date.getMonth();
                 months[month].count++;
             });
@@ -105,5 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     maintainAspectRatio: false
                 }
             });
+        })
+        .catch(error => {
+            console.error('Error fetching posts:', error); // Log fetch error
         });
 });
