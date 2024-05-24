@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Permanent = 0;
 
     // Fetch QR codes and process them
-    fetch('/lqrcodes')
+    fetch('http://localhost:3000/lqrcodes')
         .then(response => response.json())
         .then(lqrcodes => {
             lqrcodes.forEach(qrcode => {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { month: 'Dezembro', count: 0 }
     ];
 
-    fetch('/post')
+    fetch('http://localhost:3000/post')
         .then(response => response.json())
         .then(posts => {
             posts.forEach(post => {
