@@ -128,19 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         });
 
-        fetch('/lqrcodes')
-            .then(response => response.json())
-            .then(lqrcodes => {
-                lqrcodes.forEach(qrcode => {
-                    var marker = new google.maps.Marker({
-                        position: { lat: qrcode.lqrcode_latitude, lng: qrcode.lqrcode_longitude },
-                        map: map,
-                        title: `QR Code at ${qrcode.lqrcode_latitude}, ${qrcode.lqrcode_longitude}`
-                    });
+        fetch('http://localhost:3000/lqrcodes')
+        .then(response => response.json())
+        .then(lqrcodes => {
+            lqrcodes.forEach(qrcode => {
+                var marker = new google.maps.Marker({
+                    position: { lat: qrcode.lqrcode_latitude, lng: qrcode.lqrcode_longitude },
+                    map: map,
+                    title: `QR Code at ${qrcode.lqrcode_latitude}, ${qrcode.lqrcode_longitude}`
                 });
-            })
-            .catch(error => console.error('Erro ao buscar QR codes:', error));
-    }
+            });
+        })
+        .catch(error => console.error('Erro ao buscar QR codes:', error));
+}
 
     window.initMap = initMap;
 });

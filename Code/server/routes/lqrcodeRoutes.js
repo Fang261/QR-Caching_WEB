@@ -17,7 +17,6 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const lqrcodes = await Lqrcode.find();
-        console.log(lqrcodes);
         res.json(lqrcodes);
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -270,31 +270,34 @@ main {
 
 .body_estatisticas {
     background-image: url(img/Lisbon_map.png);
-    overflow: visible;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; 
+    overflow: visible;
+    padding-top: 20px;
+    min-height: 100vh;
     margin: 0;
-  }
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column; /* Ensure charts are in a column layout */
+    width: 100%;
+    max-width: 800px; /* Adjust max-width to suit your design */
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 .chart-container {
     background-color: rgb(199, 199, 199);
     border-radius: 15px;
     width: 100%;
-    height: 100%;
-    flex: 1 1 auto;
     box-sizing: border-box;
-    padding: 50px;
-    margin: 20px;
-}
-
-.chart-row {
-    max-width: 1200px;
+    padding: 20px;
+    margin: 10px 0; /* Adjust margin for vertical spacing */
 }
 
 canvas {
     width: 100%;
     height: auto;
 }
-
