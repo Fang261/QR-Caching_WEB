@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Quest = 0;
     var Permanent = 0;
 
+    // Fetch QR codes and process them
     fetch('/lqrcodes')
         .then(response => response.json())
         .then(lqrcodes => {
@@ -37,40 +38,72 @@ document.addEventListener('DOMContentLoaded', function () {
                     maintainAspectRatio: false
                 }
             });
-        })
-        
 
-    var barCtx = document.getElementById('barChart').getContext('2d');
-    var barChart = new Chart(barCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgb(54, 162, 235)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+            // Prepare data for histogram chart
+            var Numberqrcodes = [];
+            var qrcodes = [];
+            lqrcodes.forEach(qrcode => {
+                Numberqrcodes.push('QrCode ' + qrcode.lqrcode_id);
+                qrcodes.push(qrcode.lqrcode_times_scanned);
+            });
 
-    var histogramCtx = document.getElementById('histogramChart').getContext('2d');
-    var histogramChart = new Chart(histogramCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: 'rgb(255, 99, 132)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+            var histogramCtx = document.getElementById('histogramChart').getContext('2d');
+            var histogramChart = new Chart(histogramCtx, {
+                type: 'bar',
+                data: {
+                    labels: Numberqrcodes,
+                    datasets: [{
+                        label: 'Number of times each qrcode was scanned',
+                        data: qrcodes,
+                        backgroundColor: 'rgb(255, 99, 132)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        });
+
+    var months = [
+        { month: 'Janeiro', count: 0 },
+        { month: 'Fevereiro', count: 0 },
+        { month: 'Março', count: 0 },
+        { month: 'Abril', count: 0 },
+        { month: 'Maio', count: 0 },
+        { month: 'Junho', count: 0 },
+        { month: 'Julho', count: 0 },
+        { month: 'Agosto', count: 0 },
+        { month: 'Setembro', count: 0 },
+        { month: 'Outubro', count: 0 },
+        { month: 'Novembro', count: 0 },
+        { month: 'Dezembro', count: 0 }
+    ];
+
+    fetch('/post')
+        .then(response => response.json())
+        .then(posts => {
+            posts.forEach(post => {
+                var date = new Date(post.pos_tdate); // Assuming post has a 'date' field
+                var month = date.getMonth();
+                months[month].count++;
+            });
+
+            var barCtx = document.getElementById('barChart').getContext('2d');
+            var barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: months.map(m => m.month),
+                    datasets: [{
+                        label: 'Posts posted per Month',
+                        data: months.map(m => m.count),
+                        backgroundColor: 'rgb(54, 162, 235)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        });
 });
