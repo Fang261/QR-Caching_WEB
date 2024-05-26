@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="icon" href="Logo_mini.png">
     <title>Index</title>
 </head>
-
 <body class="body_index">
     <header>
         <nav>
@@ -18,7 +16,7 @@
                 <a href="signup.html"><button class="signup-btn">Sign Up</button></a>
             </div>
             <div class="nav_buttons2" id="nav_buttons2">
-                <a href="estatisticas.html"><button class="estatisticas-btn">Estatisticas</button></a>
+                <a href="estatisticas.html"><button class="estatisticas-btn" id="admin_button">Estatisticas</button></a>
                 <a href="profile.html"><button class="profile-btn">Profile</button></a>
             </div>
         </nav>
@@ -26,7 +24,10 @@
     <main>
         <div class="map-background">
             <img src="img/Lisbon_map.png" alt="Map Background">
-            <a href="create_route.html"><button id="create-route-btn">Create Route</button></a>
+            <div class="create-route-btn">
+                <h2>Join the Portugal's largest Social Game</h2>
+                <a href="create_route.html"><button id="create-route-btn">Create Route</button></a>
+            </div>
         </div>
         <div class="app_section">
             <div class="app_section_text">
@@ -41,11 +42,33 @@
                 <img src="img/phone.png" alt="phone" id="phone">
             </div>
         </div>
+        <div class="howto_section">
+            <div class="howto_section_content">
+                <h2>3 Steps to begin your adventure</h2>
+                <div class="steps">
+                    <div class="step1">
+                        <img src="img/User.png" alt="step1">
+                        <p>Create your account</p>
+                    </div>
+                    <div class="step2">
+                        <img src="img/mini_phone.png" alt="step2">
+                        <p>Find a QrCode</p>
+                    </div>
+                    <div class="step3">
+                        <img src="img/camera.png" alt="step3">
+                        <p>Take a Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event_section">
+            <h2>See all the Main Events</h2>
+            <a href="events.html"><div class="event_container">
+                <!-- Subdivs will be dynamically added here -->
+            </div></a>
+        </div>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="index.js"></script>
 </body>
-
 </html>
