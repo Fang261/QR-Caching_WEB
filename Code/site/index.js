@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const adminButton = document.getElementById('admin_button');
 
 
-    let isLoggedIn = false;
-    let isAdmin = false;
+    let isLoggedIn = true;
+    let isAdmin = true;
 
 
     function updateNavButtons() {

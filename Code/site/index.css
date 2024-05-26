@@ -215,7 +215,6 @@ main {
 .event_section h2 {
     font-size: 40px;
     margin-bottom: 3%;
-    padding-top: 20px;
     text-align: center;
 
 
@@ -230,8 +229,8 @@ main {
 
 .event_item {
     flex: 0 0 auto;
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 200px;
     background-color: #242424;
     display: flex;
     justify-content: center;

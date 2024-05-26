@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "PrimedFortuna",
+  "author": "PrimedFortuna and Fang_2618",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mongoose": "^8.3.4"
+    "mongoose": "^8.4.0"
   }
 }
