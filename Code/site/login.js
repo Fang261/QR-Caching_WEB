@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Attach the login function to the button click event
-    const loginButton = document.querySelector('.signin-btn');
+    const loginButton = document.querySelector('login-btn');
     if (loginButton) {
         loginButton.addEventListener('click', (event) => {
             event.preventDefault();

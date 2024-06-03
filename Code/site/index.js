@@ -51,4 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-export { updateUI };
+
