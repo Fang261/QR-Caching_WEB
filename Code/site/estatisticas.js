@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { month: 'Dezembro', count: 0 }
     ];
     
-    fetch('http://localhost:3000/posts')
+    fetch('http://176.78.46.208/posts')
         .then(response => response.json())
         .then(posts => {
             console.log('Posts:', posts); // Log posts
