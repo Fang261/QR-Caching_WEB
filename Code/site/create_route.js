@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         directionsRenderer = new google.maps.DirectionsRenderer();
         directionsRenderer.setMap(map);
 
-        fetch('http://localhost:3000/lqrcodes')
+        fetch('176.78.46.208/lqrcodes')
             .then(response => response.json())
             .then(lqrcodes => {
                 lqrcodes.forEach(qrcode => {
@@ -204,5 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
-    window.initMap = initMap;
+    window.initMap = initMap;   
 });
