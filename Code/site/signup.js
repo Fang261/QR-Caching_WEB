@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value.trim();
 
         // Validate username
+
         if (username.length < 8) {
             alert("Username must be at least 8 characters long.");
             return;

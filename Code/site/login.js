@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('userId', data.userId);
                 localStorage.setItem('userName', data.userName);
                 // Redirect or perform any other actions upon success
-                updateUI(); // Call function to update the UI based on login status
             } else {
                 alert('Error: ' + data.message);
             }

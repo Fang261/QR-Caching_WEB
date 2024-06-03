@@ -1,15 +1,13 @@
-function updateUI() { // This function will be called after login
-    console.log("Updating UI based on login status...");
-    isLoggedIn = true;
-    updateNavButtons();
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons1 = document.getElementById('nav_buttons1');
     const navButtons2 = document.getElementById('nav_buttons2');
     const adminButton = document.getElementById('admin_button');
 
     let isLoggedIn = false;
+
+    if (localStorage.getItem('userId')) {
+        isLoggedIn = true;
+    }
 
     function isAdminUser() { // This function will be called after login
         const userId = localStorage.getItem('userId');
