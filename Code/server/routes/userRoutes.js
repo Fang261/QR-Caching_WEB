@@ -67,11 +67,19 @@ router.delete('/:id', getUser, async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const { user_name, user_email, user_password } = req.body;
+
+        // Check if the email is already in use
+        const existingUser = await User.findOne({ user_email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Email already in use' });
+        }
+
         const newUser = new User({
             user_name,
             user_email,
-            user_password
+            user_password // Assume this is already hashed
         });
+
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
     } catch (error) {

@@ -1,39 +1,66 @@
-function signUp() {
-    var username = document.getElementById('username').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+// Import bcryptjs for hashing passwords (if using from a CDN)
+import bcrypt from 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js';
 
-    var data = { username: username, email: email, password: password };
+// Sign up function
+async function signUp() {
+    // Get the input values
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-    fetch('http://localhost:3000/user', {
+    // Validate username
+    if (username.length < 8) {
+        alert("Username must be at least 8 characters long.");
+        return;
+    }
+    if (username.includes(' ')) {
+        alert("Username cannot contain spaces.");
+        return;
+    }
+
+    // Validate password
+    const specialCharRegex = /[^a-zA-Z0-9.!]/;
+    if (specialCharRegex.test(password)) {
+        alert("Password can only contain letters, numbers, dots, and exclamation marks.");
+        return;
+    }
+
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create user object
+    const user = {
+        user_name: username,
+        user_email: email,
+        user_password: hashedPassword
+    };
+
+    // Send POST request to the server
+    fetch('/users/signup', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(user)
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
+    .then(response => response.json())
+    .then(data => {
+        if (data._id) {
+            alert("User created successfully!");
+            // Redirect or perform any other actions upon success
         } else {
-            return response.json().then(errorData => {
-                throw new Error(errorData.message);
-            });
+            alert("Error: " + data.message);
         }
-    })
-    .then(result => {
-        alert('Sign up successful!');
-        window.location.href = 'login.html';
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Sign up failed: ' + error.message);
+        alert("An error occurred during signup.");
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.signin-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        signUp();
-    });
+// Attach the signUp function to the button click event
+document.querySelector('.signin-btn').addEventListener('click', (event) => {
+    event.preventDefault();
+    signUp();
 });
