@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 13,
             center: location,
+            mapTypeControl: false, // Remove map and satellite buttons
+            streetViewControl: false, // Remove street view button
+            fullscreenControl: false, // Remove fullscreen button
             styles: [
-
                 {
                     featureType: 'poi',
                     stylers: [{ visibility: 'off' }]
@@ -37,8 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "color": "#757575"
                         }
                     ]
-                }
-                ,
+                },
                 {
                     "featureType": "road.highway",
                     "elementType": "geometry",
@@ -110,9 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         {
                             "visibility": "on"
-                        },
-                        {
-                            "weight": 2.5
                         }
                     ]
                 }, {
@@ -162,30 +160,38 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleWaypointSelection(marker) {
         const markerIndex = selectedWaypoints.indexOf(marker);
         if (markerIndex === -1) {
-            if (selectedWaypoints.length < 2) {
-                selectedWaypoints.push(marker);
-                marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png'); // change color of selected marker
-            }
+            selectedWaypoints.push(marker);
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png'); // change color of selected marker
         } else {
             selectedWaypoints.splice(markerIndex, 1);
             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png'); // reset color of deselected marker
         }
 
-        if (selectedWaypoints.length === 2) {
+        if (selectedWaypoints.length > 1) {
             calculateAndDisplayRoute();
+        } else {
+            directionsRenderer.setDirections({ routes: [] }); // Clear previous routes if less than 2 markers are selected
         }
     }
 
     function calculateAndDisplayRoute() {
-        const waypoints = selectedWaypoints.map(marker => ({
+        if (selectedWaypoints.length < 2) {
+            return;
+        }
+
+        const waypoints = selectedWaypoints.slice(1, -1).map(marker => ({
             location: marker.getPosition(),
             stopover: true,
         }));
 
+        const origin = selectedWaypoints[0].getPosition();
+        const destination = selectedWaypoints[selectedWaypoints.length - 1].getPosition();
+
         directionsService.route(
             {
-                origin: waypoints[0].location,
-                destination: waypoints[1].location,
+                origin: origin,
+                destination: destination,
+                waypoints: waypoints,
                 travelMode: google.maps.TravelMode.DRIVING,
             },
             (response, status) => {
@@ -196,9 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         );
-
-        selectedWaypoints.forEach(marker => marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png'));
-        selectedWaypoints = [];
     }
 
     window.initMap = initMap;
