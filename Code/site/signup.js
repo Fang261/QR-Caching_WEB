@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data._id) {
                 alert("User created successfully!");
+                window.location.href = "/login.html";
                 // Redirect or perform any other actions upon success
             } else {
                 alert("Error: " + data.message);
