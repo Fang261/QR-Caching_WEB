@@ -1,4 +1,3 @@
-import {updateUI } from './index.js';
 document.addEventListener('DOMContentLoaded', () => {
     // Login function
     async function login() {
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Attach the login function to the button click event
-    const loginButton = document.querySelector('login-btn');
+    const loginButton = document.querySelector('.login-btn');
     if (loginButton) {
         loginButton.addEventListener('click', (event) => {
             event.preventDefault();
