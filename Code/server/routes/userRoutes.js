@@ -88,6 +88,28 @@ router.post('/signup', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
+
+// Login a user
+router.post('/login', async (req, res) => {
+    try {
+        const { user_email, user_password } = req.body;
+        const user = await User.findOne({ user_email });
+
+        if (!user) {
+            return res.status(400).json({ message: 'User not found' });
+        }
+
+        const isMatch = await bcrypt.compare(user_password, user.user_password);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
+
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 async function getUser(req, res, next) {
     let user;
     try {
