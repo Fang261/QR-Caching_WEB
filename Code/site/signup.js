@@ -60,7 +60,9 @@ async function signUp() {
 }
 
 // Attach the signUp function to the button click event
-document.querySelector('.signin-btn').addEventListener('click', (event) => {
-    event.preventDefault();
-    signUp();
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.signup-btn').addEventListener('click', (event) => {
+        event.preventDefault();
+        signUp();
+    });
 });
