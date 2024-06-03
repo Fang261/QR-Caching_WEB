@@ -7,36 +7,6 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="icon" href="Logo_mini.png">
     <title>Sign Up</title>
-    <script>
-        function signUp() {
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-    
-            const userData = {
-                user_name: username,
-                user_email: email,
-                user_password: password
-            };
-    
-            fetch('/users', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userData)
-})
-
-            .then(response => response.json())
-            .then(data => {
-                console.log('User signed up:', data);
-            })
-            .catch(error => {
-                console.error('Error signing up:', error);
-            });
-        }
-    </script>
-    
 </head>
 
 <body>
@@ -55,8 +25,7 @@
                         <div class="info">
                             <input id="username" class="email" type="text" placeholder="Username" required>
                             <input id="email" class="email" type="email" placeholder="Email" required>
-                            <input id="password" class="email" type="password" placeholder="Password" required
-                                minlength="8" maxlength="15">
+                            <input id="password" class="email" type="password" placeholder="Password" required minlength="8" maxlength="15">
                         </div>
                         <div class="remember">
                             <input value="true" type="checkbox"><label>Remember me</label>
@@ -80,10 +49,7 @@
             </div>
         </div>
     </main>
-
-    <footer>
-
-    </footer>
+    <script src="signup.js"></script>
 </body>
 
 </html>
