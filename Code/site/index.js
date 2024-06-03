@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     let isLoggedIn = true;
-    let isAdmin = true;
+    let isAdmin = false;
 
 
     function updateNavButtons() {
