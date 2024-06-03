@@ -1,6 +1,3 @@
-// Import bcryptjs for hashing passwords (if using from a CDN)
-import bcrypt from 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js';
-
 // Sign up function
 async function signUp() {
     // Get the input values
@@ -26,8 +23,7 @@ async function signUp() {
     }
 
     // Hash the password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create user object
     const user = {
