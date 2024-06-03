@@ -4,17 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const adminButton = document.getElementById('admin_button');
 
 
-    let isLoggedIn = true;
-    let isAdmin = false;
+    let isLoggedIn = false;
+
+    function updateUI() { // This function will be called after login
+        console.log("Updating UI based on login status...");
+        isLoggedIn = true;
+    }
+
+    function isAdminUser() { // This function will be called after login
+        if (localStorage.getItem('userId') === '1' || localStorage.getItem('userId') === '2') {
+            adminButton.style.display = 'flex';
+            isAdmin = true;
+        }
+        adminButton.style.display = 'none';
+        isAdmin = false;
+    }
 
 
-    function updateNavButtons() {
+    function updateNavButtons() { 
         if (isLoggedIn) {
             navButtons1.style.display = 'none';
             navButtons2.style.display = 'flex';
-            if (!isAdmin) {
-                adminButton.style.display = 'none';
-            }
+            isAdminUser();
         } else {
             navButtons1.style.display = 'flex';
             navButtons2.style.display = 'none';
@@ -38,5 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Replace with your actual logic to get the number of events
         return 15; // Example value
     }
-
 });
+
+export { updateUI };

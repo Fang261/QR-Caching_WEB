@@ -11,10 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Username must be at least 8 characters long.");
             return;
         }
-        if (username.includes(' ')) {
-            alert("Username cannot contain spaces.");
-            return;
-        }
 
         // Validate password
         const specialCharRegex = /[^a-zA-Z0-9.!]/;

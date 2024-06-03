@@ -1,3 +1,4 @@
+import {updateUI } from './index.js';
 document.addEventListener('DOMContentLoaded', () => {
     // Login function
     async function login() {
@@ -36,7 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data._id) {
                 alert("Login successful!");
-                // Redirect or perform any other actions upon success
+                window.location.href = "/index.html";
+                localStorage.setItem('userId', user.user_id);
+                updateUI(); // Update the UI after login
+
             } else {
                 alert("Error: " + data.message);
             }
