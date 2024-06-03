@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Permanent = 0;
 
     // Fetch QR codes and process them
-    fetch('http://localhost:3000/lqrcodes')
+    fetch('http://176.78.46.208/lqrcodes')
         .then(response => response.json())
         .then(lqrcodes => {
             lqrcodes.forEach(qrcode => {
