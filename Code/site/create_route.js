@@ -89,7 +89,7 @@ function calculateAndDisplayRoute() {
             origin: origin,
             destination: destination,
             waypoints: waypoints,
-            travelMode: google.maps.TravelMode.DRIVING,
+            travelMode: google.maps.TravelMode.WALKING,
         },
         (response, status) => {
             if (status === 'OK') {
