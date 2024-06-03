@@ -29,7 +29,12 @@ main {
     height: 125px;
 }
 
-.nav_buttons1,
+.nav_buttons1{
+    display: flex;
+    gap: 10px;
+    padding: 25px;
+}
+
 .nav_buttons2 {
     display: none;
     gap: 10px;
