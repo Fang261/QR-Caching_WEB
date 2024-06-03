@@ -24,20 +24,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get the latest user ID
-router.get('/latest-id', async (req, res) => {
-    try {
-        const latestUser = await User.findOne().sort({ user_id: -1 });
-        if (latestUser) {
-            res.json({ latest_id: latestUser.user_id });
-        } else {
-            res.json({ latest_id: 0 }); // If no users exist, start from ID 0
-        }
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
-
 // Get a single user
 router.get('/:id', getUser, (req, res) => {
     res.json(res.user);
@@ -78,25 +64,24 @@ router.delete('/:id', getUser, async (req, res) => {
     }
 });
 
-// Create a new user
 router.post('/signup', async (req, res) => {
     try {
-        // Get the latest user ID
-        const latestIdResponse = await fetch('/users/latest-id');
-        const latestIdData = await latestIdResponse.json();
-        const latestId = latestIdData.latest_id;
+        // Find the user with the highest user_id
+        const highestUser = await User.findOne().sort({ user_id: -1 });
+        let nextUserId = 1; // Default value if no user exists yet
 
-        // Increment the latest user ID
-        const newUserId = latestId + 1;
+        if (highestUser) {
+            nextUserId = highestUser.user_id + 1;
+        }
 
-        // Create the new user
         const { user_name, user_email, user_password } = req.body;
         const newUser = new User({
-            user_id: newUserId,
+            user_id: nextUserId,
             user_name,
             user_email,
             user_password
         });
+
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
     } catch (error) {
