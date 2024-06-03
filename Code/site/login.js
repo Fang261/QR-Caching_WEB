@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Login successful!');
                 localStorage.setItem('userId', data.userId);
                 localStorage.setItem('userName', data.userName);
-                // Redirect or perform any other actions upon success
+                window.location.href = "/index.html";
             } else {
                 alert('Error: ' + data.message);
             }
