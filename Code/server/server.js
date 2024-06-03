@@ -33,7 +33,7 @@ mongoose.connect('mongodb://localhost:27017/myDatabase', {})
         app.use('/lqes', lqeRoutes);
         app.use('/achlqes', achlqeRoutes);
 
-        const PORT = process.env.PORT || 3000;
+        const PORT = process.env.PORT || 80;
         app.listen(PORT, () => {
             console.log(`Server is running on http://localhost:${PORT}`);
         });
