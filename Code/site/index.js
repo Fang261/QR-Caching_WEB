@@ -1,27 +1,26 @@
+function updateUI() { // This function will be called after login
+    console.log("Updating UI based on login status...");
+    isLoggedIn = true;
+    updateNavButtons();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons1 = document.getElementById('nav_buttons1');
     const navButtons2 = document.getElementById('nav_buttons2');
     const adminButton = document.getElementById('admin_button');
 
-
     let isLoggedIn = false;
 
-    function updateUI() { // This function will be called after login
-        console.log("Updating UI based on login status...");
-        isLoggedIn = true;
-    }
-
     function isAdminUser() { // This function will be called after login
-        if (localStorage.getItem('userId') === '1' || localStorage.getItem('userId') === '2') {
+        const userId = localStorage.getItem('userId');
+        if (userId === '1' || userId === '2') {
             adminButton.style.display = 'flex';
-            isAdmin = true;
+        } else {
+            adminButton.style.display = 'none';
         }
-        adminButton.style.display = 'none';
-        isAdmin = false;
     }
 
-
-    function updateNavButtons() { 
+    function updateNavButtons() {
         if (isLoggedIn) {
             navButtons1.style.display = 'none';
             navButtons2.style.display = 'flex';
@@ -50,5 +49,3 @@ document.addEventListener('DOMContentLoaded', function() {
         return 15; // Example value
     }
 });
-
-
