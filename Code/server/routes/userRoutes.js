@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
 // Create a new user
@@ -89,23 +90,27 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// Login a user
+// Login route
 router.post('/login', async (req, res) => {
     try {
         const { user_email, user_password } = req.body;
+
+        // Find the user by email
         const user = await User.findOne({ user_email });
-
         if (!user) {
-            return res.status(400).json({ message: 'User not found' });
+            return res.status(404).json({ message: 'User not found' });
         }
 
-        const isMatch = await bcrypt.compare(user_password, user.user_password);
-        if (!isMatch) {
-            return res.status(400).json({ message: 'Invalid credentials' });
+        // Compare the password with the plain text password stored in the database
+        if (user.user_password !== user_password) {
+            return res.status(401).json({ message: 'Invalid password' });
         }
 
-        res.json(user);
+        // User authenticated successfully
+        res.status(200).json({ message: 'Login successful', userId: user._id });
+
     } catch (error) {
+        console.error('Error during login:', error);
         res.status(500).json({ message: error.message });
     }
 });
