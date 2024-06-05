@@ -23,6 +23,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get the total number of QR codes
+router.get('/count', async (req, res) => {
+    try {
+        const qrCodeCount = await Lqrcode.countDocuments();
+        res.status(200).json({ qrCodeCount });
+    } catch (error) {
+        console.error('Error fetching QR code count:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
+
 // Get a single lqrcode
 router.get('/:id', getLqrcode, (req, res) => {
     res.json(res.lqrcode);

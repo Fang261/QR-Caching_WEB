@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const navButtons1 = document.getElementById('nav_buttons1');
     const navButtons2 = document.getElementById('nav_buttons2');
     const adminButton = document.getElementById('admin_button');
 
     let isLoggedIn = false;
+
 
     if (localStorage.getItem('userId')) {
         isLoggedIn = true;
@@ -30,6 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     updateNavButtons();
+
+    // Fetch the number of QR codes from the backend
+    fetch('http://localhost:3000/api/lqrcodes/count')
+        .then(response => response.json())
+        .then(data => {
+            const qrCodeCount = data.qrCodeCount;
+            const qrCodeText = document.querySelector('.app_section_text h2');
+            qrCodeText.textContent = `There are ${qrCodeCount} QR Codes in Lisbon`;
+        })
+        .catch(error => {
+            console.error('Error fetching QR code count:', error);
+        });
 
     const numberOfEvents = getNumberOfEventsFromDatabase(); // Replace this with your actual function
 
