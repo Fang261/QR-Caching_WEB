@@ -49,6 +49,18 @@ router.delete('/:id', getUlq, async (req, res) => {
     }
 });
 
+// Get the number of QR codes a user has scanned
+router.get('/count/:userId', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const qrCodeCount = await Ulq.countDocuments({ ulq_user_id: userId });
+        res.status(200).json({ qrCodeCount });
+    } catch (error) {
+        console.error('Error fetching QR code count:', error);
+        res.status(500).json({ message: error.message });
+    }
+});
+
 async function getUlq(req, res, next) {
     let ulq;
     try {

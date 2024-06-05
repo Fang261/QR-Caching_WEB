@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function isAdminUser() { // This function will be called after login
         const userId = localStorage.getItem('userId');
-        if (userId === '1' || userId === '2') {
+        if (userId === '665e38a4cf108645778fc6f8' || userId === '665e3f9e26a5eb57cca5c20d') {
             adminButton.style.display = 'flex';
         } else {
             adminButton.style.display = 'none';
