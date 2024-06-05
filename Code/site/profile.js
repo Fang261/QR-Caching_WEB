@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get user ID from local storage
     const userId = localStorage.getItem("userId");
+    const username = localStorage.getItem("userName");
 
     // Check if userId exists in local storage
     if (userId) {
         // Fetch username from local storage
-        const username = localStorage.getItem("userName");
         document.getElementById("profile_name").textContent = username;
 
         // Fetch number of QR codes from the database
