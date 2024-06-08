@@ -34,7 +34,7 @@ function initMap() {
     directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
 
-    fetch('http://176.78.46.208/lqrcodes')
+    fetch('http://85.246.91.101/lqrcodes')
         .then(response => response.json())
         .then(lqrcodes => {
             lqrcodes.forEach(qrcode => {
