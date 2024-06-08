@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNavButtons();
 
     // Fetch the number of QR codes from the backend
-    fetch('http://176.78.46.208/lqrcodes/count')
+    fetch('http://85.246.91.101/lqrcodes/count')
         .then(response => response.json())
         .then(data => {
             const qrCodeCount = data.qrCodeCount;

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("profile_name").textContent = username;
 
         // Fetch number of QR codes from the database
-        fetch(`http://176.78.46.208/users/${userId}`)
+        fetch(`http://85.246.91.101/users/${userId}`)
             .then(response => response.json())
             .then(data => {
                 const qrCodeCount = data.qrCodeCount;
