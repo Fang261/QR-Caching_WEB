@@ -46,6 +46,9 @@ router.patch('/:id', getEvent, async (req, res) => {
         if (req.body.events_fdate != null) {
             res.event.events_fdate = req.body.events_fdate;
         }
+        if (req.body.events_svg != null) {
+            res.event.events_svg = req.body.events_svg;
+        }
         const updatedEvent = await res.event.save();
         res.json(updatedEvent);
     } catch (error) {
